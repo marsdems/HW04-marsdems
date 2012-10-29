@@ -33,13 +33,11 @@ void HW04App::setup()
 	int n = sizeCount;
 	marsdemsStarbucks* inputData = new marsdemsStarbucks();
 
-	//Testing Data 
+	//Testing Data for build() and getNearest()
 	inputData->build(inputFile, n);
-	Entry* nearest = inputData -> getNearest(.825,.678); //Looking for Yonkers, New York
+	Entry* nearest = inputData -> getNearest(.825088,.6786); //Looking for Yonkers, New York
 	
-	console() << nearest->identifier << endl;
-	console() << nearest->x << endl;
-	console() << nearest->y << endl;
+	console() << nearest->identifier << "(" << nearest->x << ", " << nearest->y << ")" << endl;
 }
 
 Entry* HW04App::getData()
