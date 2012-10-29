@@ -1,3 +1,9 @@
+/**********************************************************
+* Programmer: Mike Marsden
+* Assignment: Homework04
+* Date: 10/27/2012
+* File: HW04App.cpp
+**********************************************************/
 #include "cinder/app/AppBasic.h"
 #include "cinder/gl/gl.h"
 
@@ -28,7 +34,7 @@ void HW04App::update()
 void HW04App::draw()
 {
 	// clear out the window with black
-	gl::clear( Color( 0, 0, 0 ) ); 
+	// gl::clear( Color( 0, 0, 0 ) ); 
 }
 
 CINDER_APP_BASIC( HW04App, RendererGl )
