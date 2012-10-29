@@ -35,11 +35,11 @@ void HW04App::setup()
 
 	//Testing Data 
 	inputData->build(inputFile, n);
-	Entry* nearest = inputData -> getNearest(.1,.1);
+	Entry* nearest = inputData -> getNearest(.825,.678); //Looking for Yonkers, New York
 	
-	cout << nearest->identifier << endl;
-	cout << nearest->x << endl;
-	cout << nearest->y << endl;
+	console() << nearest->identifier << endl;
+	console() << nearest->x << endl;
+	console() << nearest->y << endl;
 }
 
 Entry* HW04App::getData()
@@ -49,7 +49,7 @@ Entry* HW04App::getData()
 	double x, y;
 	string text = "";
 	while (in.good()) {
-		getline(in, text);
+		getline(in, text, ',');
 		in >> x;
 		in.get();
 		in >> y;
@@ -63,7 +63,7 @@ Entry* HW04App::getData()
 	sizeCount = 0;
 
 	while (in.good()) {
-		getline(in, text);
+		getline(in, text, ',');
 		in >> x;
 		in.get();
 		in >> y;
