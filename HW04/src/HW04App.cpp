@@ -6,6 +6,10 @@
 **********************************************************/
 #include "cinder/app/AppBasic.h"
 #include "cinder/gl/gl.h"
+#include "Starbucks.h"
+#include "marsdemsStarbucks.h"
+#include <fstream>
+#include <iostream>
 
 using namespace ci;
 using namespace ci::app;
@@ -21,6 +25,26 @@ class HW04App : public AppBasic {
 
 void HW04App::setup()
 {
+	Entry* inputFile = new Entry[10];
+	ifstream in("Starbucks_2006.csv");
+
+	for (int i = 0; i< 7655; i++) {
+		getline(in, inputFile[i].identifier);
+
+		in >> inputFile[i].x;
+		in.get();
+		in >> inputFile[i].y;
+		in.get();
+	}
+
+	marsdemsStarbucks* inputData = new marsdemsStarbucks();
+
+	inputData->build(inputFile, 10);
+	Entry* nearest = inputData -> getNearest(.1,.1);
+
+	cout << nearest->identifier << endl;
+	cout << nearest->x << endl;
+	cout << nearest->y << endl;
 }
 
 void HW04App::mouseDown( MouseEvent event )
