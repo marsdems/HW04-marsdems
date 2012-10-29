@@ -25,9 +25,10 @@ class HW04App : public AppBasic {
 
 void HW04App::setup()
 {
-	Entry* inputFile = new Entry[10];
+	Entry* inputFile = new Entry[10000];
 	ifstream in("Starbucks_2006.csv");
 
+	// 7655 for testing purposes
 	for (int i = 0; i< 7655; i++) {
 		getline(in, inputFile[i].identifier);
 
@@ -39,7 +40,7 @@ void HW04App::setup()
 
 	marsdemsStarbucks* inputData = new marsdemsStarbucks();
 
-	inputData->build(inputFile, 10);
+	inputData->build(inputFile, 10000);
 	Entry* nearest = inputData -> getNearest(.1,.1);
 
 	cout << nearest->identifier << endl;
@@ -58,7 +59,7 @@ void HW04App::update()
 void HW04App::draw()
 {
 	// clear out the window with black
-	// gl::clear( Color( 0, 0, 0 ) ); 
+	 //gl::clear( Color( 0, 0, 0 ) ); 
 }
 
 CINDER_APP_BASIC( HW04App, RendererGl )

@@ -18,11 +18,9 @@ Entry* marsdemsStarbucks::getNearest(double x, double y) {
 	Entry* currentNearest = new Entry();
 	Entry temp = arrayData_[0];
 	for (int i = 0; i<totalSize; i++) {
-	
-	
-	
-	
-	
+		if (sqrt((arrayData_[i].x-x)*(arrayData_[i].x-x) + (arrayData_[i].y-y)*(arrayData_[i].y-y)) < sqrt((temp.x-x)*(temp.x-x)+(temp.y-y)*(temp.y-y))) {
+			temp = arrayData_[i];
+		}	
 	}
 	
 	*currentNearest = temp;
